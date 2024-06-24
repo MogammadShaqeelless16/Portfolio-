@@ -147,3 +147,47 @@ const initSlider = function (currentSlider) {
 }
 
 for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
+
+
+/**Dark mode  */
+
+const modeToggleBtn = document.getElementById('mode-toggle-btn');
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
+const body = document.body;
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+  body.classList.remove('light-mode');
+  body.classList.add('dark-mode');
+  sunIcon.style.display = 'none';
+  moonIcon.style.display = 'inline';
+  localStorage.setItem('mode', 'dark');
+}
+
+// Function to toggle light mode
+function toggleLightMode() {
+  body.classList.remove('dark-mode');
+  body.classList.add('light-mode');
+  sunIcon.style.display = 'inline';
+  moonIcon.style.display = 'none';
+  localStorage.setItem('mode', 'light');
+}
+
+// Event listener for mode toggle button
+modeToggleBtn.addEventListener('click', () => {
+  if (body.classList.contains('dark-mode')) {
+    toggleLightMode();
+  } else {
+    toggleDarkMode();
+  }
+});
+
+// Initialize based on stored mode or default to dark mode
+const currentMode = localStorage.getItem('mode');
+if (currentMode === 'light') {
+  toggleLightMode();
+} else {
+  toggleDarkMode(); // Default to dark mode if mode is not set or unknown
+}
+
