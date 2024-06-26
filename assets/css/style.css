@@ -122,8 +122,8 @@ html {
 }
 
 body {
-  background-color: var(--eerie-black);
-  color: var(--roman-silver);
+  /* background-color: var(--eerie-black); */
+  /* color: var(--roman-silver); */
   font-size: 1.6rem;
   line-height: 1.75;
   overflow: hidden;
@@ -680,7 +680,7 @@ body.nav-active { overflow: hidden; }
 \*-----------------------------------*/
 
 .footer {
-  background-color: var(--raisin-black);
+  /* background-color: var(--raisin-black); */
   padding-block: 76px;
 }
 
@@ -699,9 +699,9 @@ body.nav-active { overflow: hidden; }
   height: 45px;
   display: grid;
   place-items: center;
-  border: 2px solid var(--white_a10);
+  /* border: 2px solid var(--white_a10); */
   border-radius: var(--radius-circle);
-  color: var(--white);
+  /* color: var(--white); */
   transition: var(--transition-1);
 }
 
